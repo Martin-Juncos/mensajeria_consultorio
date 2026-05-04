@@ -1,0 +1,115 @@
+.message-detail {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3px);
+  padding: 1.15rem;
+}
+
+.message-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(15, 23, 42, 0.58);
+  box-shadow: var(--shadow-panel);
+}
+
+.back-btn,
+.mark-read-btn {
+  padding: 0.68rem 1rem;
+  color: #f8fbff;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.back-btn {
+  border: 1px solid var(--line);
+  background: rgba(148, 163, 184, 0.14);
+}
+
+.back-btn:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-cyan);
+}
+
+.mark-read-btn {
+  border: 1px solid rgba(34, 211, 238, 0.48);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(59, 130, 246, 0.34));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.18);
+}
+
+.message-detail-content {
+  flex: 1;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(2, 6, 23, 0.62)),
+    radial-gradient(circle at top right, rgba(139, 92, 246, 0.12), transparent 30%);
+  box-shadow: var(--shadow-panel);
+}
+
+.message-meta {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.message-meta-row {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.message-meta-row strong {
+  color: var(--cyan);
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.message-meta-row span {
+  color: #f8fbff;
+  font-weight: 650;
+}
+
+.patient-badge {
+  display: inline-block;
+  padding: 0.16rem 0.56rem;
+  margin-right: 0.55rem;
+  color: #06111f;
+  background: linear-gradient(135deg, var(--cyan), #a78bfa);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.message-body {
+  white-space: pre-wrap;
+  color: #dbeafe;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+@media (max-width: 760px) {
+  .message-detail {
+    min-height: auto;
+    padding: 0.75rem;
+  }
+
+  .message-detail-header {
+    flex-direction: column;
+  }
+
+  .message-meta-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
